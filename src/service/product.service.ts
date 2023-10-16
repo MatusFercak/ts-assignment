@@ -16,7 +16,7 @@ async function findProduct(productId: string) {
     const product = await fetch(`https://dev.aux.boxpi.com/case-study/products/${productId}/positions`, {
       method: "GET",
       headers: {
-        "x-api-key": "3232", //process.env.BOXPI_API_KEY as string,
+        "x-api-key": process.env.BOXPI_API_KEY as string,
       },
     });
     if (product.status == 200) {
